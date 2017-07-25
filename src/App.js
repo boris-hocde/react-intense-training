@@ -1,5 +1,5 @@
 import React from 'react'
-import Card from './Card'
+import VoteCard from './VoteCard'
 import characters from './characters.json'
 
 const App = () =>
@@ -11,7 +11,7 @@ const App = () =>
       <div className="row">
         {characters.map(character =>
           <div className="col-sm-4" key={character.id}>
-            <Card
+            <VoteCard
               title={character.name}
               text={character.description}
               picture={character.picture}
