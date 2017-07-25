@@ -4,7 +4,19 @@ import Card from './Card'
 class VoteCard extends React.Component {
   state = { votes: 0 }
 
-  handleClick = () => this.setState(state => ({ votes: state.votes + 1 }))
+  incrementVotes = () => this.setState(state => ({ votes: state.votes + 1 }))
+  handleClick = () => this.incrementVotes()
+  handleKeyUp = event => {
+    if (event.keyCode === this.props.keyCode) this.incrementVotes()
+  }
+
+  componentWillMount() {
+    window.addEventListener('keyup', this.handleKeyUp)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('keyup', this.handleKeyUp)
+  }
 
   render() {
     return (
