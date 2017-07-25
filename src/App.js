@@ -1,10 +1,12 @@
 import React from 'react'
 import { Route, Link } from 'react-router-dom'
+import DataLoader from './DataLoader'
 import Home from './Home'
 import Character from './Character'
 
 const App = () =>
   <div className="container">
+    <DataLoader />
     <header className="header">
       <h3>
         <Link to="/">Winter is voting</Link>

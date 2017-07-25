@@ -1,13 +1,12 @@
 import React from 'react'
-import fetchData from './fetchData'
+import { connect } from 'react-redux'
 import VoteCard from './VoteCard'
 
 const keyById = { 1: 49, 2: 50, 3: 51 }
 
-const Home = ({ match, data }) => {
-  if (!data) return <div>Loading...</div>
-
-  const character = data.find(({ id }) => String(id) === match.params.id)
+const Home = ({ match, characters }) => {
+  const character = characters.find(({ id }) => String(id) === match.params.id)
+  if (!character) return null
   return (
     <VoteCard
       keyCode={keyById[String(character.id)]}
@@ -18,4 +17,4 @@ const Home = ({ match, data }) => {
   )
 }
 
-export default fetchData('/characters.json')(Home)
+export default connect(state => ({ characters: state.characters }))(Home)
