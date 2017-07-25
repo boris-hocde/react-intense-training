@@ -1,27 +1,18 @@
 import React from 'react'
-import VoteCard from './VoteCard'
-import characters from './characters.json'
-
-const keyById = { 1: 49, 2: 50, 3: 51 }
+import { Route, Link } from 'react-router-dom'
+import Home from './Home'
+import Character from './Character'
 
 const App = () =>
   <div className="container">
     <header className="header">
-      <h3>Winter is voting</h3>
+      <h3>
+        <Link to="/">Winter is voting</Link>
+      </h3>
     </header>
     <section className="content">
-      <div className="row">
-        {characters.map(character =>
-          <div className="col-sm-4" key={character.id}>
-            <VoteCard
-              keyCode={keyById[String(character.id)]}
-              title={`#${character.id} - ${character.name}`}
-              text={character.description}
-              picture={character.picture}
-            />
-          </div>,
-        )}
-      </div>
+      <Route exact path="/" component={Home} />
+      <Route path="/characters/:id" component={Character} />
     </section>
   </div>
 
