@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "John Snow",
+    "description": "King of the North",
+    "picture": "http://res.cloudinary.com/smooth/image/upload/v1500972396/training_react_jon_snow.png"
+  },
+  {
+    "id": 2,
+    "name": "Cersei Lannister",
+    "description": "Queen Regent of the Seven Kingdoms",
+    "picture": "http://res.cloudinary.com/smooth/image/upload/v1500972396/training_react_cersei_lannister.png"
+  },
+  {
+    "id": 3,
+    "name": "Daenerys Targaryen",
+    "description": "Mother of dragons",
+    "picture": "http://res.cloudinary.com/smooth/image/upload/v1500972396/training_react_daenerys_targaryen.png"
+  }
+]
